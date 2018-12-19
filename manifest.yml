@@ -1,0 +1,12 @@
+---
+applications:
+  - name: pcf_phoenix_spike
+    memory: 1024M
+    instances: 1
+    routes:
+      - route: pcf_phoenix_spike.cfapps.io
+    buildpacks:
+    -   https://github.com/HashNuke/heroku-buildpack-elixir.git
+    env:
+      MIX_ENV: prod
+    command: mix phx.server
